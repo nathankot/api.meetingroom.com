@@ -13,7 +13,6 @@ var userSchema = new Schema({
   location: { type: String }
 });
 
-
 var User = module.exports = mongoose.model('User', userSchema);
 
 // Validations
