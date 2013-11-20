@@ -27,6 +27,9 @@ if ('development' === app.get('env')) {
 }
 
 app.post('/users', routes.users.create);
+app.get('/ping', function(req, res) {
+  res.send(200);
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
