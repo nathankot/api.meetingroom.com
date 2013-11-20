@@ -1,13 +1,15 @@
+'use strict';
 
 /**
  * Module dependencies.
  */
 
+require('newrelic');
+require('./lib/connection.js');
+
 var express = require('express');
 var routes = require('./routes');
 var http = require('http');
-var path = require('path');
-var connection = require('./lib/connection.js');
 
 var app = express();
 
@@ -20,7 +22,7 @@ app.use(express.methodOverride());
 app.use(app.router);
 
 // development only
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
